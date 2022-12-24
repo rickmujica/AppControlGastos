@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import globalStyles from '../styles';
 
-const FormularioGasto = ({setModal}) => {
+const FormularioGasto = ({setModal, handleGasto}) => {
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState('');
   const [categoria, setCategoria] = useState('');
@@ -41,11 +41,18 @@ const FormularioGasto = ({setModal}) => {
             style={styles.input}
             placeholder="Cantidad del Gasto ej. Gs. 300.000"
             keyboardType="numeric"
+            value={cantidad}
+            onChangeText={setCantidad}
           />
         </View>
         <View style={styles.campo}>
           <Text style={styles.label}>Categoria Gasto</Text>
-          <Picker>
+          <Picker
+            style={{color: '#64748B'}}
+            selectedValue={categoria}
+            onValueChange={itemValue => {
+              setCategoria(itemValue);
+            }}>
             <Picker.Item label="-- Seleccione --" value="" />
             <Picker.Item label="Ahorro" value="ahorro" />
             <Picker.Item label="Comida" value="comida" />
@@ -56,7 +63,9 @@ const FormularioGasto = ({setModal}) => {
             <Picker.Item label="Suscripciones" value="suscripciones" />
           </Picker>
         </View>
-        <Pressable style={styles.submitBtn}>
+        <Pressable
+          style={styles.submitBtn}
+          onPress={() => handleGasto({nombre, cantidad, categoria})}>
           <Text style={styles.submitBtnTexto}>Agregar Gasto</Text>
         </Pressable>
       </View>
@@ -92,6 +101,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     borderRadius: 10,
+    color: '#64748B',
   },
   submitBtn: {
     backgroundColor: '#A4BE7B',

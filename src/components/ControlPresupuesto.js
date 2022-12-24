@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 24,
     marginBottom: 10,
+    color: '#64748B',
   },
   label: {
     fontWeight: '700',

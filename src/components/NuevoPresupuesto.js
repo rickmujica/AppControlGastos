@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     textAlign: 'center',
     marginTop: 30,
+    color: '#64748B',
   },
   btn: {
     marginTop: 30,
