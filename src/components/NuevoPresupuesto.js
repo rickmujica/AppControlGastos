@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   label: {
     textAlign: 'center',
     fontSize: 24,
-    color: '#A4BE7B',
+    color: '#397885',
   },
   input: {
     backgroundColor: '#f5f5f5',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginTop: 30,
-    backgroundColor: '#285430',
+    backgroundColor: '#3978',
     padding: 10,
     borderRadius: 10,
   },
